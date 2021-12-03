@@ -1,7 +1,7 @@
 package com.example.my1024dou.common
 
 //app版本
-const val appVersion = 2.6
+const val appVersion = 1.1
 
 // 分享应用
 var shareContent = "1024老司机带你回家了：https://docs.qq.com/doc/DVGhIR05ZR3lTWGRa"
@@ -114,7 +114,7 @@ var gongXianList = mutableListOf<String>(
 
 // app信息获取的url
 var appInfoUrl = mutableListOf<String>(
-    "https://www.cnblogs.com/sdfasdf/p/15019781.html",
+    "https://www.cnblogs.com/sdfasdf/p/15640498.html",
     "https://blog.csdn.net/weixin_44786530/article/details/119567136",
     "https://1024shen.com/archives/5304"
 )

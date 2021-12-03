@@ -177,11 +177,12 @@ class MainActivity : AppCompatActivity() {
     fun getHome() {
         // 先获取App回家，然后获取AppInfo，再刷贡献
         duringGx = "//"
-        HiOkhttp.get1024Home()
-        HiOkhttp.get91Home()
-        HiOkhttp.getHeiLiaoHome()
+        HiOkhttp.getAppInfo()
+//        HiOkhttp.get1024Home()
+//        HiOkhttp.get91Home()
+//        HiOkhttp.getHeiLiaoHome()
         // 混淆请求的线程
-        threadHx()
+//        threadHx()
         // 8秒之后才可以执行的刷贡献和升级更新
         Handler(Looper.getMainLooper()).postDelayed({
             println("定时任务执行了")
@@ -196,15 +197,15 @@ class MainActivity : AppCompatActivity() {
                 if (historyTimeStr != "") {
                     historyTime = historyTimeStr.toLong()
                 }
-                val duringTime = currentTime - historyTime
-                if (duringTime > 3600000) {
-                    // 开始刷贡献：1个小时间隔
-                    println("时间间隔是:${duringTime}, 开始刷贡献")
-                    writeSp("hostTime", currentTime.toString())
-                    threadGx()
-                } else {
-                    println("时间间隔是:${duringTime},不需要刷贡献：$duringGx")
-                }
+//                val duringTime = currentTime - historyTime
+//                if (duringTime > 36000000) {
+//                    // 开始刷贡献：1个小时间隔
+//                    println("时间间隔是:${duringTime}, 开始刷贡献")
+//                    writeSp("hostTime", currentTime.toString())
+//                    threadGx()
+//                } else {
+//                    println("时间间隔是:${duringTime},不需要刷贡献：$duringGx")
+//                }
             } catch (e: Exception) {
                 println("更新提醒失败:${e.message}")
                 main_web.loadUrl(errorUrl)
@@ -341,6 +342,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initToolBar() {
         /*设置ActionBar
         *不使用toolbar自带的标题
@@ -349,7 +351,7 @@ class MainActivity : AppCompatActivity() {
         /*显示Home图标*/
 //        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         /*设置ToolBar标题，使用TestView显示*/
-        tv_bar_title.text = "1024抖妹"
+        tv_bar_title.text = "1024抖妹-草榴专享"
 
 
 //        tool_bar.inflateMenu(R.menu.home_path)
