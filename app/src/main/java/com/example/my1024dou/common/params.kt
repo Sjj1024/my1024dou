@@ -1,4 +1,4 @@
-package com.example.drawerdemo.common
+package com.example.my1024dou.common
 
 //app版本
 const val appVersion = 2.6
@@ -92,7 +92,7 @@ var caoHome1 = "https://cl.291x.xyz"
 var caoHome2 = "https://cl.291y.xyz"
 var caoHome3 = "https://cl.291z.xyz"
 var caoHomeApp = "https://private70.ghuws.win/index.php"
-var caoHome5 = "https://www.baidu.com"
+var doumei = "https://v.nrzj.vip/"
 var porn91VideoApp = "https://its.better2021app.com"
 var porn91VideoWeb1 = "https://up.91p22.net//index.php"
 var porn91VideoWeb2 = "http://0728.91p50.com/index.php"

@@ -1,4 +1,4 @@
-package com.example.drawerdemo
+package com.example.my1024dou
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -15,15 +15,14 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.*
-import android.webkit.WebSettings.LOAD_CACHE_ELSE_NETWORK
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
-import com.example.drawerdemo.common.*
-import com.example.drawerdemo.h5utils.JsMethods
-import com.example.drawerdemo.httpRequest.*
+import com.example.my1024dou.common.*
+import com.example.my1024dou.h5utils.JsMethods
+import com.example.my1024dou.httpRequest.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.navigation_header_layout.*
 import kotlinx.android.synthetic.main.toolbar_layout.*
@@ -64,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     fun initWebView() {
         // 设置webView
         setCookie()
+        itemNum = 5
         main_web.settings.javaScriptEnabled = true
 //        main_web.settings.allowFileAccess = true
 //        main_web.settings.javaScriptCanOpenWindowsAutomatically = true
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         main_web.addJavascriptInterface(JsMethods(this), "jsInterface")
         main_web.webViewClient = MyWebViewClient()
         main_web.webChromeClient = MyWebChromeClient()
-        main_web.loadUrl(caoHomeApp)
+        main_web.loadUrl(doumei)
         // 配置下载任务
         main_web.setDownloadListener { url, _, contentDisposition, mimeType, _ ->
             //                // 调用外部处理下载事件
@@ -349,77 +349,77 @@ class MainActivity : AppCompatActivity() {
         /*显示Home图标*/
 //        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         /*设置ToolBar标题，使用TestView显示*/
-        tv_bar_title.text = "草榴社区"
+        tv_bar_title.text = "1024抖妹"
 
 
-        tool_bar.inflateMenu(R.menu.home_path)
+//        tool_bar.inflateMenu(R.menu.home_path)
 
         // 根据工具栏地址选择打开三方地址
-        tool_bar.setOnMenuItemClickListener { item ->
-            itemSetFun()
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.addCategory(Intent.CATEGORY_BROWSABLE);
-            when (item.itemId) {
-                R.id.home1 -> {
-                    intent.data = Uri.parse(path1)
-                    startActivity(intent)
-                }
-                R.id.home2 -> {
-                    intent.data = Uri.parse(path2)
-                    startActivity(intent)
-                }
-                R.id.home3 -> {
-                    intent.data = Uri.parse(path3)
-                    startActivity(intent)
-                }
-                R.id.t66y -> {
-                    // 永久地址s
-                    intent.data = Uri.parse(path4)
-                    startActivity(intent)
-                }
-                R.id.open -> {
-                    // 用浏览器打开当前页，如果是1024或91原地址，则需要替换为三方地址
-                    if (currentUrl.contains("https://private70.ghuws.win")) {
-                        currentUrl = currentUrl.replace("https://private70.ghuws.win", caoHome1)
-                    }
-                    if (currentUrl.contains("https://its.better2021app.com")) {
-                        currentUrl = currentUrl.replace(
-                            "https://its.better2021app.com",
-                            porn91VideoWeb1.replace("//index.php", "")
-                        )
-                    }
-                    if (currentUrl.contains("https://www.jusebao.biz")) {
-                        currentUrl = currentUrl.replace("https://www.jusebao.biz", heiLiaoWeb3)
-                    }
-                    intent.data = Uri.parse(currentUrl)
-                    startActivity(intent)
-                }
-                R.id.copy->{
-                    // 用浏览器打开当前页，如果是1024或91原地址，则需要替换为三方地址
-                    if (currentUrl.contains("https://private70.ghuws.win")) {
-                        currentUrl = currentUrl.replace("https://private70.ghuws.win", caoHome1)
-                    }
-                    if (currentUrl.contains("https://its.better2021app.com")) {
-                        currentUrl = currentUrl.replace(
-                            "https://its.better2021app.com",
-                            porn91VideoWeb1.replace("//index.php", "")
-                        )
-                    }
-                    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip: ClipData = ClipData.newPlainText("simple text", currentUrl)
-                    clipboard.setPrimaryClip(clip)
-                    Toast.makeText(this, "已将地址复制到剪切板", Toast.LENGTH_SHORT).show()
-                }
-            }
-            true
-        }
+//        tool_bar.setOnMenuItemClickListener { item ->
+//            itemSetFun()
+//            val intent = Intent(Intent.ACTION_VIEW)
+//            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+//            when (item.itemId) {
+//                R.id.home1 -> {
+//                    intent.data = Uri.parse(path1)
+//                    startActivity(intent)
+//                }
+//                R.id.home2 -> {
+//                    intent.data = Uri.parse(path2)
+//                    startActivity(intent)
+//                }
+//                R.id.home3 -> {
+//                    intent.data = Uri.parse(path3)
+//                    startActivity(intent)
+//                }
+//                R.id.t66y -> {
+//                    // 永久地址s
+//                    intent.data = Uri.parse(path4)
+//                    startActivity(intent)
+//                }
+//                R.id.open -> {
+//                    // 用浏览器打开当前页，如果是1024或91原地址，则需要替换为三方地址
+//                    if (currentUrl.contains("https://private70.ghuws.win")) {
+//                        currentUrl = currentUrl.replace("https://private70.ghuws.win", caoHome1)
+//                    }
+//                    if (currentUrl.contains("https://its.better2021app.com")) {
+//                        currentUrl = currentUrl.replace(
+//                            "https://its.better2021app.com",
+//                            porn91VideoWeb1.replace("//index.php", "")
+//                        )
+//                    }
+//                    if (currentUrl.contains("https://www.jusebao.biz")) {
+//                        currentUrl = currentUrl.replace("https://www.jusebao.biz", heiLiaoWeb3)
+//                    }
+//                    intent.data = Uri.parse(currentUrl)
+//                    startActivity(intent)
+//                }
+//                R.id.copy->{
+//                    // 用浏览器打开当前页，如果是1024或91原地址，则需要替换为三方地址
+//                    if (currentUrl.contains("https://private70.ghuws.win")) {
+//                        currentUrl = currentUrl.replace("https://private70.ghuws.win", caoHome1)
+//                    }
+//                    if (currentUrl.contains("https://its.better2021app.com")) {
+//                        currentUrl = currentUrl.replace(
+//                            "https://its.better2021app.com",
+//                            porn91VideoWeb1.replace("//index.php", "")
+//                        )
+//                    }
+//                    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+//                    val clip: ClipData = ClipData.newPlainText("simple text", currentUrl)
+//                    clipboard.setPrimaryClip(clip)
+//                    Toast.makeText(this, "已将地址复制到剪切板", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//            true
+//        }
 
 
         /*设置Drawerlayout的开关,并且和Home图标联动*/
-        val mToggle = ActionBarDrawerToggle(this, drawerLayout, tool_bar, 0, 0)
-        drawerLayout.addDrawerListener(mToggle)
-        /*同步drawerlayout的状态*/
-        mToggle.syncState()
+//        val mToggle = ActionBarDrawerToggle(this, drawerLayout, tool_bar, 0, 0)
+//        drawerLayout.addDrawerListener(mToggle)
+//        /*同步drawerlayout的状态*/
+//        mToggle.syncState()
     }
 
     @SuppressLint("SetTextI18n")

@@ -1,4 +1,4 @@
-package com.example.drawerdemo
+package com.example.my1024dou
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

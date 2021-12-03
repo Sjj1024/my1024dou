@@ -1,8 +1,8 @@
-package com.example.drawerdemo.httpRequest
+package com.example.my1024dou.httpRequest
 
 import android.util.Base64
-import com.example.drawerdemo.common.*
-import com.example.drawerdemo.common.AppInfo
+import com.example.my1024dou.common.*
+import com.example.my1024dou.common.AppInfo
 import com.google.gson.Gson
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor

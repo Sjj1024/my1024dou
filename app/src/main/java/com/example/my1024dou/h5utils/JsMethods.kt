@@ -1,10 +1,7 @@
-package com.example.drawerdemo.h5utils
+package com.example.my1024dou.h5utils
 
 import android.content.Context
 import android.webkit.JavascriptInterface
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.toolbar_layout.*
 
 // Kotlin与H5通讯的桥梁类
 class JsMethods(context:Context) {
